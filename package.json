@@ -1,0 +1,27 @@
+{
+  "name": "modulate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacko2611/modulate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacko2611/modulate/issues"
+  },
+  "homepage": "https://github.com/jacko2611/modulate#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
