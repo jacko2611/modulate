@@ -1,3 +1,3 @@
-import { loadGoogleFonts } from 'google-fonts-loader';
+// import { loadGoogleFonts } from 'google-fonts-loader';
 
-loadGoogleFonts('Sen:700');
+// loadGoogleFonts('Sen:700');
