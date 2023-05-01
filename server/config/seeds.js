@@ -21,7 +21,7 @@ db.once('open', async () => {
       name: 'Moog Subsequent 37',
       description:
         'The SUB 37 Tribute Edition is a limited release, 2-note paraphonic analog synthesizer built on the award winning Sub Phatty sound engine, but specifically enhanced to meet the demands of professional synthesists, sound designers, and keyboard players.',
-      image: 'client/src/assets/images/moog-subsequent-37.jpg.jpg',
+      image: '/Users/jacksonkent/Desktop/Bootcamp/modulate/client/src/assets/images/moog-subsequent-37.jpg.jpg',
       category: categories[0]._id,
       price: 2850.00,
       quantity: 10
