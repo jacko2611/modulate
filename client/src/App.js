@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -17,6 +17,8 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+
+import './App.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -38,43 +40,37 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [showButton, setShowButton] = useState(true);
+
+  const handleClick = () => {
+    setShowButton(false);
+  };
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
-            <Nav />
-            <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
-              <Route 
-                path="/success" 
-                element={<Success />} 
-              />
-              <Route 
-                path="/orderHistory" 
-                element={<OrderHistory />} 
-              />
-              <Route 
-                path="/products/:id" 
-                element={<Detail />} 
-              />
-              <Route
-                path="*" 
-                element={<NoMatch />} 
-              />
-            </Routes>
-          </StoreProvider>
+          {showButton ? (
+            <div className="start-page">
+              <h1 className="start-page-title">Modulate</h1>
+              <button className="start-page-button" onClick={handleClick}>
+                -- Enter --
+              </button>
+            </div>
+          ) : (
+            <StoreProvider>
+              <Nav />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/success" element={<Success />} />
+                <Route path="/orderHistory" element={<OrderHistory />} />
+                <Route path="/products/:id" element={<Detail />} />
+                <Route path="*" element={<NoMatch />} />
+              </Routes>
+            </StoreProvider>
+          )}
         </div>
       </Router>
     </ApolloProvider>
