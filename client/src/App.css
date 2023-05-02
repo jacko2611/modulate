@@ -28,6 +28,30 @@
   color: #61dafb;
 }
 
+.start-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.start-page-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.start-page-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+  background-color: var(--light);
+  color: var(--dark);
+  opacity: 0;
+  animation: fade-in 1s ease-out 3s forwards;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +59,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

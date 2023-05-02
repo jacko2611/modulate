@@ -1,0 +1,23 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+ button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+  }
