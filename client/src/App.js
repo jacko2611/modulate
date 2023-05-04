@@ -54,7 +54,7 @@ function App() {
             <div className="start-page">
               <h1 className="start-page-title">Modulate</h1>
               <button className="start-page-button" onClick={handleClick}>
-                -- Enter --
+                Enter
               </button>
             </div>
           ) : (
