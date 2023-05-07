@@ -252,15 +252,15 @@ p {
   color: var(--dark);
 }
 
-.card {
+/* .card {
   width: 25%;
   text-align: center;
-}
-
+} */
+/* 
 .card img {
   width: 300px;
   height: auto;
-}
+} */
 
 .error-text {
   color: var(--error);
