@@ -1,0 +1,19 @@
+.card {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-img {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .card-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  
