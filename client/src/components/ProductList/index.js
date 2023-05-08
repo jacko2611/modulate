@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -9,6 +9,7 @@ import spinner from '../../assets/spinner.gif';
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
+  const [isLoading, setIsLoading] = useState(true); // Add state variable for loading
 
   const { currentCategory } = state;
 
@@ -23,6 +24,7 @@ function ProductList() {
       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
       });
+      setIsLoading(false); // Set loading state to false once data is loaded
     } else if (!loading) {
       idbPromise('products', 'get').then((products) => {
         dispatch({
@@ -30,6 +32,7 @@ function ProductList() {
           products: products,
         });
       });
+      setIsLoading(false); // Set loading state to false if there's no data and not loading
     }
   }, [data, loading, dispatch]);
 
@@ -43,7 +46,10 @@ function ProductList() {
     );
   }
 
-  return (
+  // Render spinner if loading is true, otherwise render product list
+  return isLoading ? (
+    <img src={spinner} alt="loading" style={{ width: '500px', height: '500px' }} />
+  ) : (
     <div className="my-2">
       <h2>Products:</h2>
       {state.products.length ? (
@@ -62,8 +68,6 @@ function ProductList() {
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
-      {loading ? <img src={spinner} alt="loading" style={{ width: '600px', height: '600px' }} /> : null}
-
     </div>
   );
 }
