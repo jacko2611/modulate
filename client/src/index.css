@@ -131,10 +131,20 @@ a:hover {
 
 header {
   background: var(--primary);
+  height: 150px;
+}
+
+nav {
+  background: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
 }
 
 header a {
   color: var(--light);
+  align-items: flex-start;
 }
 
 button {
