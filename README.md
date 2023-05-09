@@ -1,5 +1,5 @@
 # Modulate
-https://www.github.com/jacko2611/reactive-portfolio
+https://www.github.com/jacko2611/modulate
 ## Description
 Modulate is a functional online music store application using React, Express, JavaScript, GraphQL, MongoDB, Apollo Server, JWT, Bcrypt and Stripe. 
 ## Table of Contents
